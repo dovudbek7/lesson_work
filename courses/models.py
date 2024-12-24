@@ -6,6 +6,9 @@ class Instructor(models.Model):
     email = models.EmailField(unique=True)
     speciality = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class Courses(models.Model):
     title = models.CharField(max_length=255)
@@ -20,6 +23,3 @@ class Lessons(models.Model):
     content = models.TextField()
     course = models.ForeignKey(Courses, on_delete=models.CASCADE)
     order = models.PositiveIntegerField()
-
-
-

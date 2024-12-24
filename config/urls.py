@@ -49,7 +49,8 @@ schema_view = get_schema_view(
 )
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('courses-api/', include("courses.urls"))
+    path('courses-api/', include("courses.urls")),
+    path('book-api/', include("book.urls"))
 ]
 
 if settings.DEBUG:
